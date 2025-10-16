@@ -1,0 +1,311 @@
+/* Estilos personalizados para el Generador de QR */
+
+body {
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(102, 126, 234, 0.35), transparent),
+                radial-gradient(1200px 600px at 90% 20%, rgba(118, 75, 162, 0.35), transparent),
+                linear-gradient(135deg, #0f1220 0%, #12152a 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e9ecef;
+}
+
+.container {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.08);
+    color: #212529;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.35) 0%, rgba(118, 75, 162, 0.35) 100%) !important;
+    border: none;
+    padding: 1.5rem;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #d1d5db;
+    margin-bottom: 0.5rem;
+}
+
+/* Texto de formularios oscuro dentro de tarjetas blancas */
+.card .form-label { color: #495057; }
+.card .form-control, .card .form-select { background: #ffffff; color: #212529; border: 2px solid #e9ecef; }
+
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.12);
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    background: rgba(255,255,255,0.06);
+    color: #e9ecef;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn {
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border: none;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.btn-outline-primary {
+    border: 2px solid #667eea;
+    color: #667eea;
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: #667eea;
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.btn-outline-danger {
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    background: transparent;
+}
+
+.btn-outline-danger:hover {
+    background: #dc3545;
+    border-color: #dc3545;
+    transform: translateY(-2px);
+}
+
+#qrImage, #qrCanvas {
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    background: white;
+    padding: 10px;
+}
+
+#qrImage:hover, #qrCanvas:hover {
+    transform: scale(1.05);
+}
+
+#resultSection {
+    animation: slideUp 0.5s ease-out;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#historySection {
+    animation: fadeIn 0.8s ease-in;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(5px);
+}
+
+.history-item {
+    transition: transform 0.3s ease;
+}
+
+.history-item:hover {
+    transform: translateY(-3px);
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+.toast {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    padding: 2.5rem 0;
+    overflow: hidden;
+}
+.hero::before, .hero::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.35;
+}
+.hero::before {
+    width: 300px; height: 300px; background: #667eea; left: -80px; top: -80px;
+}
+.hero::after {
+    width: 280px; height: 280px; background: #764ba2; right: -60px; bottom: -60px;
+}
+.brand-logo {
+    height: 48px; width: auto; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.2));
+}
+.brand-title { color: #f6f6f6; font-weight: 800; letter-spacing: 0.2px; }
+.brand-subtitle { color: #cbd5e0; }
+.hero-badge { background: rgba(255,255,255,0.1); padding: .5rem 1rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; color: #e9ecef; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.hero-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(102,126,234,.35); background: rgba(255,255,255,0.16); }
+.hero-badge.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 10px 28px rgba(102,126,234,.45); }
+
+/* Neo mode accents */
+.neo-mode .card-header { background: linear-gradient(135deg, rgba(118, 75, 162, 0.5), rgba(102, 126, 234, 0.5)) !important; }
+.neo-mode .btn-primary { background: linear-gradient(135deg, #6ee7f9 0%, #a78bfa 100%); box-shadow: 0 8px 26px rgba(110,231,249,0.35); }
+.neo-mode .btn-primary:hover { background: linear-gradient(135deg, #5adff2 0%, #9d7cf8 100%); }
+.neo-mode .qr-stage { animation-duration: 1s; }
+
+/* Neo card */
+.neo-card { box-shadow: 0 30px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05); }
+
+/* Logo controls */
+.logo-controls { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+
+/* QR Stage */
+.qr-stage { display: inline-block; animation: pulse 1.5s ease-in-out infinite alternate; }
+@keyframes pulse { from { transform: translateY(0); } to { transform: translateY(-4px); } }
+
+/* Animaciones para botones */
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    #qrImage {
+        max-width: 200px;
+    }
+}
+
+/* Efectos de hover para las tarjetas del historial */
+.card.h-100 {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card.h-100:hover {
+    border-color: #667eea;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+/* Estilos para el input con sugerencias */
+.form-control::placeholder {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Animación de carga */
+.spinner-border {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilos para mejorar la accesibilidad */
+.btn:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.form-control:focus, .form-select:focus {
+    outline: none;
+}
+
+/* Efectos de transición suave para todos los elementos interactivos */
+* {
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, 
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Estilo para el título con emoji */
+.card-header h2 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    color: #5a4759 !important;
+}
+
+/* Mejoras visuales adicionales */
+.bg-success.text-white {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+}
+
+.bg-danger.text-white {
+    background: linear-gradient(135deg, #dc3545 0%, #e74c3c 100%) !important;
+}
+
+.bg-info.text-white {
+    background: linear-gradient(135deg, #17a2b8 0%, #3498db 100%) !important;
+} 
