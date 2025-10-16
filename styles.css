@@ -1,12 +1,10 @@
 /* Estilos personalizados para el Generador de QR */
 
 body {
-    background: radial-gradient(1200px 600px at 10% 10%, rgba(102, 126, 234, 0.35), transparent),
-                radial-gradient(1200px 600px at 90% 20%, rgba(118, 75, 162, 0.35), transparent),
-                linear-gradient(135deg, #0f1220 0%, #12152a 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #e9ecef;
+    color: #212529;
 }
 
 .container {
@@ -200,8 +198,8 @@ body {
     height: 48px; width: auto; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.2));
 }
 .brand-title { color: #f6f6f6; font-weight: 800; letter-spacing: 0.2px; }
-.brand-subtitle { color: #cbd5e0; }
-.hero-badge { background: rgba(255,255,255,0.1); padding: .5rem 1rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; color: #e9ecef; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.brand-subtitle { color: #1e3a8a; }
+.hero-badge { background: rgba(255,255,255,0.1); padding: .5rem 1rem; border-radius: 999px; border: 2px solid #764ba2; cursor: pointer; color: #1e3a8a; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
 .hero-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(102,126,234,.35); background: rgba(255,255,255,0.16); }
 .hero-badge.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 10px 28px rgba(102,126,234,.45); }
 
